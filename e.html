@@ -1,0 +1,130 @@
+<!-- Chapter 7 by harry complete practise. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7</title>
+</head>
+
+<body>
+    <div class="container-a" id="myid">
+        container-a
+        <div class="child-a">
+            child-a
+        </div>
+        <div class="child-b">
+            child-b
+        </div>
+    </div>
+    <div class="container-b">
+        container-b
+        <div class="child-c">
+            child-c
+        </div>
+        <div class="child-d">
+            child-d
+        </div>
+    </div>
+    <div class="query-container">
+        <div class="query">query a</div>
+        <div class="query">query b</div>
+        <div class="query">query c</div>
+        <div class="query">query d</div>
+        <div class="query">query e</div>
+        <input type="text"name="username">
+    </div>
+    <span class="span-cls">tag Selected span class use here</span>
+</body>
+<script>
+    const firstChild = document.firstChild;
+    const lastChild = document.lastChild;
+    const lastElementChild = document.lastElementChild;
+    const childNodes = document.childNodes;
+    // console.log('the value of the first child is the ',firstChild);
+    // console.log('the value of the last child is the ',lastChild);
+    // console.log('the value of the last element child is the ',lastElementChild);
+    // console.log('child nodes are ',childNodes)
+
+    const element = document.body.getElementsByClassName('container-a')[0];
+    // console.log('container-a element is : ',element);
+    const elementChild = element.childNodes;
+    // console.log('container-a child nodes are',elementChild);
+
+    for (const key of elementChild) {
+        //    console.log('Value of each node of container-a is the ',key);
+    }
+
+    // console.log("parent node is the ",document.documentElement.parentNode);
+    // console.log("parent element is the ",document.documentElement.parentElement);
+
+
+    // for previous sibling element
+    const containerb = document.getElementsByClassName('container-b')[0];
+    const prevSibling = containerb.previousElementSibling;
+    // same we can use for the next sibling with using (nextElementSibling)
+    // console.log('previous element sibling of the containerb is the ',prevSibling) ;// container a is the prev sibling of the container b so it will so the container b as previous sibling of the container b . 
+
+
+    // now will learn elementchild from the document .
+    const firstEleChild = document.firstElementChild
+    const lastEleChild = document.lastElementChild
+    // console.log('First element Child is the : ',firstEleChild);
+    // console.log('Last element Child is the ',lastEleChild);
+
+    // now use of the getElementbyId
+    const id = document.getElementById('myid');
+    // console.log('Id is the ',id)
+
+
+    // now use of the query selector 
+    const selected = document.body.querySelectorAll('.query')
+    // console.log('selected by the query is the ', selected);
+
+    // querySelector only take a first index element from all selector where query selector all take the all matched elements.
+    const oneSelected = document.body.querySelector('.query');
+    // console.log('single element selected by querySelector ', oneSelected);
+
+
+    // now we will see here how to do call the element from the tag name 
+    const tagSelected = document.body.getElementsByTagName('span')
+    // console.log('tagSelected element is the ', tagSelected);
+
+    for (let i = 0; i < tagSelected.length; i++) {
+        // console.log('span text is the ', tagSelected[i].textContent);
+    }
+
+    // now we will learn here how do access the element by the name .
+    const nameSelected = document.getElementsByName('username')
+    // console.log('name selected is : ',nameSelected)
+
+
+
+    // in last we will learn here how to do use matches , cloest , contains.
+    const match = document.querySelector('.container-b');
+    const varMatch = match.matches('.container-b')
+    // const varMatch = match.matches('container-b') // it will return a false val
+    // console.log('matched element is ',varMatch)
+
+
+    // now see closest
+    const close = document.querySelector('.child-a');
+    const closetVal = close.closest('.container-a')// closet means nears ancesstors match the selector like here it matching .container-a
+    // const closetVal = close.closest('.container-b')// return null because container-b is not closets
+    // console.log('closet value of the child-a ',closetVal) 
+
+
+    // now see contains
+    const containing = document.querySelector('.container-a');
+    // const childElement = document.querySelector('.child-c');// now it will return a false because container-b does'nt contains a child-c.
+    const childElement = document.querySelector('.child-b');// now it will return a true because container-a contains a child-b
+    const containVal = containing.contains(childElement);
+    // console.log('containing the container-a is : ', containVal)
+
+
+
+</script>
+
+</html>

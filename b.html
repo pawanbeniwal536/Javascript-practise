@@ -1,0 +1,25 @@
+<!-- Name shortlist question of the interview -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name</title>
+</head>
+<body>
+   <script>
+
+    const name = prompt("Enter your name here : ")
+
+if(name.length>8){
+    const dupName = name.slice(0,9)
+    const addName = dupName.concat("...")
+    alert("Name is :"+addName)
+}
+else{
+    alert("Name is : "+name)
+}
+   </script>
+</body>
+</html>

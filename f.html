@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8</title>
+</head>
+<body>
+    <div id="myElement" class="helow" data-role="user" data-user-id="5">Hello, World!</div>
+    <div id="myid" class="exist-cls"></div>
+    </div>
+    <script>
+
+        const element = document.getElementById('myElement');
+        // console.dir(element);
+        
+        const innerCode = element.innerHTML;
+        const outerCode = element.outerHTML;
+        // console.log('innerhtml of the element is the ',innerCode);
+        // console.log('outerHtml of the element is the ',outerCode);
+
+        // hidden properties
+        // element.hidden = true; // for hide the element.
+
+        // attribute methods
+
+        // get attribute method 
+        const getAtt = element.getAttribute('class');
+        // console.log('Getting attribute is the ',getAtt);
+
+
+        // set attribute method.
+        element.setAttribute('name','pawan')
+        const setedElem = element.getAttribute('name');
+        // console.log('the valof seted element is ',setedElem)
+
+        // now the use of has attribute method .
+        const existAttribute = element.hasAttribute('name') // if this attribute do exist return otherwise return false
+        // console.log('hasAttribute val : ',existAttribute);
+
+        // Collection of attribute 
+        const collectedAtt = element.attributes;// means return all attributes of element.
+        // console.log('collection of attributes in element is ',collectedAtt)
+
+        // remove attributes.
+        const deleteAtt = element.removeAttribute('name');
+        // console.log("after delte a attributes ",element.attributes)
+
+
+        // Data attributes in HTML allow you to store extra information directly in an element without using standard attributes or affecting the element's appearance or behavior. These attributes are prefixed with data-, and you can create your own custom attributes that start with this prefix.
+        // Creating Data Attributes : To define a data attribute, use the data- prefix followed by a descriptive name. The attribute value can be any string.
+
+        const dataAttribute = element.getAttribute('data-user-id')
+        const dataAttribute2 = element.getAttribute('data-role');
+        // console.log('Data attribute one is :',dataAttribute);
+        // console.log('Data attribute two is :',dataAttribute2);
+
+
+        // insertion method in a html using a javascript
+        let div = document.createElement('div')
+        div.className = "Insertion"
+        div.innerHTML = " Pawan is a good boy "
+
+        
+        // document.body.append(div);// at the end of the node 
+        // document.body.prepend(div); // insertion at the begining of the node . 
+        // document.body.before(div); // insert before node .
+        // document.body.after(div); // insert after a node . 
+        // document.body.replaceWith(element,div)  // Purpose: The replaceWith() method replaces the element on which it is called with one or more new nodes.
+
+
+        // insertAdjacent / html /text /element
+
+        // element.insertAdjacentHTML('beforebegin','<p>paragraph</p>') //insert html before element
+        // element.insertAdjacentElement('afterbegin',div); //insert html into element at the begining.
+        // div.insertAdjacentText('beforeend','helow sir') // insert text into element in the end
+        // div.insertAdjacentText('afterend','Pawan sir'); // insert text into element after element.
+
+        const removeEle = document.getElementsByClassName('Insertion')
+        // removeEle[0].remove()
+
+        const ele = document.getElementById('myid')
+        ele.classList.add('new-cls') // here class will add in the element
+
+        ele.classList.remove('new-cls') // now class removed from the element . 
+
+        ele.classList.toggle('toggle-cls')
+
+        const exist = ele.classList.contains('exist-cls') // if this class is available in the element it will return a true otherwise it will return a false. 
+
+        // console.log('existing class is the ',exist)
+        
+
+    </script>
+</body>
+</html>
